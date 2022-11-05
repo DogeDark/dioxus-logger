@@ -2,8 +2,13 @@
 name = "dioxus-logger"
 version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+description = "A logging utility to provide a standard interface whether you're targetting web, desktop, or mobile."
+repository = "https://github.com/DogeDark/dioxus-logger"
+homepage = "https://github.com/DogeDark/dioxus-logger"
+readme = "README.md"
+license = "MIT"
+keywords = ["dioxus", "log", "logging"]
+categories = ["development-tools::debugging"]
 
 #[features]
 #stdio = []

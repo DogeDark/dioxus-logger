@@ -61,3 +61,11 @@ You can add `dioxus-logger` to your application by adding it to your dependencie
 dioxus-logger = { version = "x.x.x", features = ["stdio"] }
 ```
 
+## License
+This project is licensed under the [MIT license].
+
+[mit license]: https://github.com/DogeDark/dioxus-logger/LICENSE
+
+Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in Dioxus by you, shall be licensed as MIT, without any additional
+terms or conditions.
