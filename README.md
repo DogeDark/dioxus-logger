@@ -5,17 +5,17 @@
 
 <div align="center">
   <!-- Crates version -->
-  <a href="https://crates.io/crates/dioxus-std">
+  <a href="https://crates.io/crates/dioxus-logger">
     <img src="https://img.shields.io/crates/v/dioxus-logger.svg?style=flat-square"
     alt="Crates.io version" />
   </a>
   <!-- Downloads -->
-  <a href="https://crates.io/crates/dioxus-std">
+  <a href="https://crates.io/crates/dioxus-logger">
     <img src="https://img.shields.io/crates/d/dioxus-logger.svg?style=flat-square"
       alt="Download" />
   </a>
   <!-- docs -->
-  <a href="https://docs.rs/dioxus-std">
+  <a href="https://docs.rs/dioxus-logger">
     <img src="https://img.shields.io/badge/docs-latest-blue.svg?style=flat-square"
       alt="docs.rs docs" />
   </a>
