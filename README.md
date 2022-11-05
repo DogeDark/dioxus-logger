@@ -63,7 +63,7 @@ dioxus-logger = "x.x.x"
 ## License
 This project is licensed under the [MIT license].
 
-[mit license]: https://github.com/DogeDark/dioxus-logger/LICENSE
+[mit license]: ./LICENSE
 
 Every contribution intentionally submitted
 for inclusion in `dioxus-logger` by you, shall be licensed as MIT, without any additional
