@@ -5,7 +5,7 @@
 
 <div align="center">
   <!-- Crates version -->
-  <a href="https://crates.io/crates/dioxus">
+  <a href="https://crates.io/crates/dioxus-std">
     <img src="https://img.shields.io/crates/v/dioxus-logger.svg?style=flat-square"
     alt="Crates.io version" />
   </a>
