@@ -23,7 +23,7 @@
 
 -----
 
-`dioxus-logger` is a (planned-to-be) feature-rich logger for [Dioxus](https://dioxuslabs.com/) that uses the `log` crate to provide a standard interface for all your logging needs.
+`dioxus-logger` is a (planned-to-be) feature-rich logger for [Dioxus](https://dioxuslabs.com/) that uses the [log](https://crates.io/crates/log) crate to provide a standard interface for all your logging needs.
 
 **Current & Planned Features**
 - [x] stdio logging (Web, Desktop) - Mobile to come
