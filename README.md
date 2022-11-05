@@ -1,6 +1,6 @@
 <div align="center">
   <h1>📡 Dioxus Logger 🛰️</h1>
-  <p><strong>A logging utility to provide a standard interface whether you're targetting web, desktop, or mobile.</strong></p>
+  <p><strong>A logging utility to provide a standard interface whether you're targetting web, desktop, or mobile with Dioxus.</strong></p>
 </div>
 
 <div align="center">
@@ -23,7 +23,7 @@
 
 -----
 
-`dioxus-logger` is a (planned-to-be) feature-rich logger that uses the `log` crate to provide a standard interface for all your logging needs.
+`dioxus-logger` is a (planned-to-be) feature-rich logger for [Dioxus](https://dioxuslabs.com/) that uses the `log` crate to provide a standard interface for all your logging needs.
 
 **Current & Planned Features**
 - [x] stdio logging (Web, Desktop) - Mobile to come
@@ -51,14 +51,13 @@ fn app(cx: Scope) -> Element {
 ```
 
 ## Platform Support
-Dioxus Logger is supported on every platform that Dioxus supports! There are a few advanced features that will only work on a couple of targets. 
-Specifically the HTTP logging and filesystem logging will not work on mobile targets.
+Dioxus logger will eventually support every target that Dioxus does. Currently only web and desktop platforms are supported.
 
 ## Installation
 You can add `dioxus-logger` to your application by adding it to your dependencies.
 ```toml
 [dependencies]
-dioxus-logger = { version = "x.x.x", features = ["stdio"] }
+dioxus-logger = "x.x.x"
 ```
 
 ## License
@@ -66,6 +65,6 @@ This project is licensed under the [MIT license].
 
 [mit license]: https://github.com/DogeDark/dioxus-logger/LICENSE
 
-Unless you explicitly state otherwise, any contribution intentionally submitted
-for inclusion in Dioxus by you, shall be licensed as MIT, without any additional
+Every contribution intentionally submitted
+for inclusion in `dioxus-logger` by you, shall be licensed as MIT, without any additional
 terms or conditions.
