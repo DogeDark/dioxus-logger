@@ -29,6 +29,7 @@
 - [x] stdio logging (Web, Desktop) - Mobile to come
 - [ ] Sending logs over HTTP to an API
 - [ ] Logging to a file
+- [ ] Logging to [Sentry](https://sentry.io/)?
 - [ ] Timestamps 
 - [ ] Custom log format
 - [ ] Feature flags for faster compilation
