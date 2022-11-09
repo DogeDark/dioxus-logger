@@ -27,11 +27,11 @@
 
 **Current & Planned Features**
 - [x] stdio logging (Web, Desktop) - Mobile to come
+- [x] Custom log format - Basic Implementation Finished
 - [ ] Sending logs over HTTP to an API
 - [ ] Logging to a file
 - [ ] Logging to [Sentry](https://sentry.io/)?
 - [ ] Timestamps 
-- [ ] Custom log format
 - [ ] Feature flags for faster compilation
 
 **This library is under development. Expect breaking changes.**
