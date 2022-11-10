@@ -7,6 +7,8 @@ const PATH: &str = "{PATH}";
 /// The arguments passed through the log macro.
 /// E.g. the args from ``info!("hello")`` will be ``"hello"``
 const ARGS: &str = "{ARGS}";
+/// A timestamp of when the log was generated.
+const TIMESTAMP: &str = "{TIMESTAMP}";
 
 /// The primary logging struct that contains all runtime configuration.
 pub struct DioxusLogger {
@@ -17,9 +19,14 @@ pub struct DioxusLogger {
 impl DioxusLogger {
     /// Create a new [`DioxusLogger`] struct to configure and build.
     pub fn new(level_filter: LevelFilter) -> Self {
+        let format = "[{LEVEL}] {PATH} - {ARGS}]";
+
+        #[cfg(feature = "timestamps")]
+        let format = "[{TIMESTAMP} | {LEVEL}] {PATH} - {ARGS}]";
+
         Self {
             level_filter,
-            format: "[{LEVEL}] {PATH} - {ARGS}]",
+            format,
         }
     }
 
@@ -30,9 +37,9 @@ impl DioxusLogger {
     }
 
     /// Allows you to define a custom format.
-    /// 
-    /// The available options are `{LEVEL}`, `{PATH}` and `{ARGS}`
-    /// 
+    ///
+    /// The available options are `{LEVEL}`, `{PATH}`, `{ARGS}` and `{TIMESTAMP}`
+    ///
     /// Providing the format of `[{LEVEL}] {PATH} - {ARGS}]` will return something like `[INFO] dioxus_testing - this is my log message`
     pub fn use_format(&mut self, format: &'static str) {
         self.format = format;
@@ -61,15 +68,8 @@ impl log::Log for DioxusLogger {
             // ARGS
             .replace(ARGS, record.args().to_string().as_str());
 
-        /*
-        // The old format, not customizable
-        let formatted = format!(
-            "[{}] {} - {}",
-            record.level(),
-            record.module_path().unwrap_or(""),
-            record.args()
-        );
-        */
+        #[cfg(feature = "timestamps")]
+        let formatted = format_timestamp(formatted);
 
         #[cfg(all(
             not(target_family = "wasm"),
@@ -83,6 +83,13 @@ impl log::Log for DioxusLogger {
     }
 
     fn flush(&self) {}
+}
+
+fn format_timestamp(formatted: String) -> String {
+    let timestamp = time::OffsetDateTime::now_utc();
+    formatted
+        .to_owned()
+        .replace(TIMESTAMP, timestamp.to_string().as_str())
 }
 
 /// Initialize `log` and `dioxus-logger` with a specified filter.
