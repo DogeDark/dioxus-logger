@@ -85,6 +85,7 @@ impl log::Log for DioxusLogger {
     fn flush(&self) {}
 }
 
+#[cfg(feature = "timestamps")]
 fn format_timestamp(formatted: String) -> String {
     let timestamp = time::OffsetDateTime::now_utc();
     formatted
