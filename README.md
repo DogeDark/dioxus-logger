@@ -37,16 +37,16 @@
 
 ```rust, ignore
 use dioxus::prelude::*;
-use log::{LevelFilter, info};
+use log::{info, LevelFilter};
 
 fn main() {
-  dioxus_logger::init(LevelFilter::Info).expect("failed to init logger");
-  dioxus::web::launch(app);
+    dioxus_logger::init(LevelFilter::Info).expect("failed to init logger");
+    dioxus_web::launch(app);
 }
 
 fn app(cx: Scope) -> Element {
-  info!("app component rendered!");
-  rsx!(cx, p { "Hello, Dioxus!" })
+    info!("my app component just rendered!");
+    cx.render(rsx!(p { "Hello, Dioxus!" }))
 }
 ```
 
