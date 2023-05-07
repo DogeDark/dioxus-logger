@@ -41,8 +41,11 @@ impl DioxusLogger {
     /// The available options are `{LEVEL}`, `{PATH}`, `{ARGS}` and `{TIMESTAMP}`
     ///
     /// Providing the format of `[{LEVEL}] {PATH} - {ARGS}]` will return something like `[INFO] dioxus_testing - this is my log message`
-    pub fn use_format(&mut self, format: &'static str) {
-        self.format = format;
+    pub fn use_format(self, format: &'static str) -> Self {
+        Self {
+            level_filter: self.level_filter,
+            format
+        }
     }
 }
 
