@@ -33,9 +33,8 @@
 - [ ] Logging to a file
 - [ ] Logging to [Sentry](https://sentry.io/)?
 
-**This library is under development. Expect breaking changes.**
-
-```rust, ignore
+**This library is not finished. Breaking changes may occur.**
+```rust
 use dioxus::prelude::*;
 use log::{info, LevelFilter};
 
@@ -59,6 +58,27 @@ You can add `dioxus-logger` to your application by adding it to your dependencie
 [dependencies]
 dioxus-logger = "x.x.x"
 ```
+
+To use dioxus-logger as is, add this line before launching Dioxus, replacing ``LevelFilter::Info`` with your preferred log level.
+```rs
+dioxus_logger::init(LevelFilter::Info).expect("failed to init logger");
+```
+
+## Custom Format
+Initialize dioxus-logger using the builder:
+```rs
+dioxus_logger::DioxusLogger::new(LevelFilter::Info)
+        .use_format("[{LEVEL}] {PATH} - {ARGS}")
+        .build()
+        .expect("failed to init logger");
+```
+The available options for ``use_format`` are:
+- LEVEL - The log severity.
+- PATH - Which crate emitted the log.
+- ARGS - The text that was logged.
+- TIMESTAMP - A timestamp of when the log was emitted. Requires the ``timestamps`` feature.
+
+Surround the option with ``{}`` in the ``use_format`` method.
 
 ## License
 This project is licensed under the [MIT license].

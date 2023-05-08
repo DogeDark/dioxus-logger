@@ -19,10 +19,10 @@ pub struct DioxusLogger {
 impl DioxusLogger {
     /// Create a new [`DioxusLogger`] struct to configure and build.
     pub fn new(level_filter: LevelFilter) -> Self {
-        let format = "[{LEVEL}] {PATH} - {ARGS}]";
+        let format = "[{LEVEL}] {PATH} - {ARGS}";
 
         #[cfg(feature = "timestamps")]
-        let format = "[{TIMESTAMP} | {LEVEL}] {PATH} - {ARGS}]";
+        let format = "[{TIMESTAMP} | {LEVEL}] {PATH} - {ARGS}";
 
         Self {
             level_filter,
