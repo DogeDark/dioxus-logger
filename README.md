@@ -45,7 +45,7 @@ fn App() -> Element {
 ```
 
 ## Platform Support
-Dioxus logger will eventually support every target that Dioxus does. Currently mobile is not supported.
+Dioxus logger will eventually support every target that Dioxus does. Currently mobile and TUI are not supported.
 
 ## Installation
 You can add `dioxus-logger` to your application by adding it to your dependencies.

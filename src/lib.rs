@@ -4,7 +4,7 @@ use tracing::{
 
 /// Initialize `dioxus-logger` with a specified max filter.
 /// Generally it is best to initialize the logger before launching your Dioxus app.
-/// Works on Web, Desktop, Fullstack, Liveview, and TUI.
+/// Works on Web, Desktop, Fullstack, and Liveview.
 /// 
 /// # Example
 /// 
