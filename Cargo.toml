@@ -1,8 +1,8 @@
 [package]
 name = "dioxus-logger"
-version = "0.4.1"
+version = "0.5.0"
 edition = "2021"
-description = "A logging utility to provide a standard interface whether you're targetting web, desktop, or mobile."
+description = "A logging utility to provide a standard interface whether you're targetting web desktop, fullstack, and more."
 repository = "https://github.com/DogeDark/dioxus-logger"
 homepage = "https://github.com/DogeDark/dioxus-logger"
 readme = "README.md"
@@ -10,11 +10,14 @@ license = "MIT"
 keywords = ["dioxus", "log", "logging"]
 categories = ["development-tools::debugging"]
 
-[features]
-timestamps = ["dep:time"]
 
 [dependencies]
-log = { version = "0.4", features = ["std"] }
-time = { version = "0.3.17", features = ["std", "wasm-bindgen"], optional = true }
-#reqwest = { version = "0.11", features = [] }
-web-sys = { version = "0.3.60", features = ["console"] }
+tracing = "0.1.40"
+tracing-subscriber = { version = "0.3.18", default-features = false, features = ["registry", "std"] }
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+tracing-wasm = "0.2.1"
+console_error_panic_hook = "0.1.7"
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+tracing-subscriber = { version = "0.3.18", default-features = false, features = ["fmt"] }
