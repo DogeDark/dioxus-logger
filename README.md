@@ -39,7 +39,7 @@ fn main() {
 fn App() -> Element {
   info!("App rendered");
   rsx! {
-      "hi"
+    p { "hi" }
   }
 }
 ```

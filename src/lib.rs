@@ -21,7 +21,7 @@ use tracing::{
 /// fn App() -> Element {
 ///     info!("App rendered");
 ///     rsx! {
-///         "hi"
+///         p { "hi" }
 ///     }
 /// }
 /// ```
