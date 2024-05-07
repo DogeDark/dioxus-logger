@@ -1,6 +1,6 @@
 <div align="center">
   <h1>📡 Dioxus Logger 🛰️</h1>
-  <p><strong>A logging utility to provide a standard interface whether you're targetting web desktop, fullstack, and more.</strong></p>
+  <p><strong>A logging utility to provide a standard interface whether you're targetting web, desktop, fullstack, and more.</strong></p>
 </div>
 
 <div align="center">
@@ -28,7 +28,7 @@
 
 ```rust
 use dioxus::prelude::*;
-use tracing::{Level, info};
+use dioxus_logger::{Level, info};
  
 fn main() {
   dioxus_logger::init(Level::INFO).expect("logger failed to init");

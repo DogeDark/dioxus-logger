@@ -1,23 +1,27 @@
-use tracing::{
-    subscriber::{set_global_default, SetGlobalDefaultError}, Level,
+use tracing::subscriber::{set_global_default, SetGlobalDefaultError};
+
+pub use tracing::{
+    debug, debug_span, error, error_span, info, info_span, span, trace, trace_span, warn,
+    warn_span, Level,
 };
 
 /// Initialize `dioxus-logger` with a specified max filter.
 /// Generally it is best to initialize the logger before launching your Dioxus app.
 /// Works on Web, Desktop, Fullstack, and Liveview.
-/// 
+///
 /// # Example
-/// 
-/// ```rust,ignore
+///
+/// ```rust
 /// use dioxus::prelude::*;
-/// use tracing::{Level, info};
-/// 
+/// use dioxus_logger::{Level, info};
+///
 /// fn main() {
 ///     dioxus_logger::init(Level::INFO).expect("logger failed to init");
-///     launch(App);
+///     // launch app:
+///     // e.g. launch(App);
 /// }
+///
 /// 
-/// #[component]
 /// fn App() -> Element {
 ///     info!("App rendered");
 ///     rsx! {
@@ -31,7 +35,9 @@ pub fn init(level: Level) -> Result<(), SetGlobalDefaultError> {
         use tracing_subscriber::layer::SubscriberExt;
         use tracing_subscriber::Registry;
 
-        let layer_config = tracing_wasm::WASMLayerConfigBuilder::new().set_max_level(level).build();
+        let layer_config = tracing_wasm::WASMLayerConfigBuilder::new()
+            .set_max_level(level)
+            .build();
         let layer = tracing_wasm::WASMLayer::new(layer_config);
         let reg = Registry::default().with(layer);
 

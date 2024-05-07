@@ -1,6 +1,6 @@
 [package]
 name = "dioxus-logger"
-version = "0.5.0"
+version = "0.5.1"
 edition = "2021"
 description = "A logging utility to provide a standard interface whether you're targetting web desktop, fullstack, and more."
 authors = ["DogeDark"]
@@ -14,11 +14,19 @@ categories = ["development-tools::debugging"]
 
 [dependencies]
 tracing = "0.1.40"
-tracing-subscriber = { version = "0.3.18", default-features = false, features = ["registry", "std"] }
+tracing-subscriber = { version = "0.3.18", default-features = false, features = [
+    "registry",
+    "std",
+] }
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
 tracing-wasm = "0.2.1"
 console_error_panic_hook = "0.1.7"
 
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
-tracing-subscriber = { version = "0.3.18", default-features = false, features = ["fmt"] }
+tracing-subscriber = { version = "0.3.18", default-features = false, features = [
+    "fmt",
+] }
+
+[dev-dependencies]
+dioxus = { version = "0.5", features = ["desktop"] }
