@@ -1,9 +1,9 @@
-use tracing::subscriber::{set_global_default, SetGlobalDefaultError};
-
-pub use tracing::{
-    debug, debug_span, error, error_span, info, info_span, span, trace, trace_span, warn,
-    warn_span, Level,
+use tracing::{
+    subscriber::{set_global_default, SetGlobalDefaultError},
+    Level,
 };
+
+pub use tracing;
 
 /// Initialize `dioxus-logger` with a specified max filter.
 /// Generally it is best to initialize the logger before launching your Dioxus app.
@@ -13,7 +13,7 @@ pub use tracing::{
 ///
 /// ```rust
 /// use dioxus::prelude::*;
-/// use dioxus_logger::{Level, info};
+/// use dioxus_logger::tracing::{Level, info};
 ///
 /// fn main() {
 ///     dioxus_logger::init(Level::INFO).expect("logger failed to init");
@@ -21,7 +21,7 @@ pub use tracing::{
 ///     // e.g. launch(App);
 /// }
 ///
-///
+/// #[component]
 /// fn App() -> Element {
 ///     info!("App rendered");
 ///     rsx! {
