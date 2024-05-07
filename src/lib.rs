@@ -21,7 +21,7 @@ pub use tracing::{
 ///     // e.g. launch(App);
 /// }
 ///
-/// 
+///
 /// fn App() -> Element {
 ///     info!("App rendered");
 ///     rsx! {
