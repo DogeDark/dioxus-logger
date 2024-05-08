@@ -11,14 +11,13 @@ pub use tracing;
 ///
 /// # Example
 ///
-/// ```rust
+/// ```rust,no_run
 /// use dioxus::prelude::*;
 /// use dioxus_logger::tracing::{Level, info};
 ///
 /// fn main() {
 ///     dioxus_logger::init(Level::INFO).expect("logger failed to init");
-///     // launch app:
-///     // e.g. launch(App);
+///     launch(App);
 /// }
 ///
 /// #[component]
