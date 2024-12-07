@@ -1,3 +1,6 @@
+> [!WARNING]
+> Dioxus Logger has been inlined with the main [Dioxus repository](https://github.com/DioxusLabs/dioxus/tree/main/packages/logger). The crate itself, `dioxus-logger`, has not changed. This repository is now an archive of my ([@DogeDark](https://github.com/DogeDark)) first open-source project ❤️.
+
 <div align="center">
   <h1>📡 Dioxus Logger 🛰️</h1>
   <p><strong>A logging utility to provide a standard interface whether you're targetting web, desktop, fullstack, and more.</strong></p>
